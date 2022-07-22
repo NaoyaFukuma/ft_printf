@@ -6,7 +6,7 @@
 /*   By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 21:50:32 by nfukuma           #+#    #+#             */
-/*   Updated: 2022/07/18 21:28:54 by nfukuma          ###   ########.fr       */
+/*   Updated: 2022/07/22 21:44:43 by nfukuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,6 @@ static void	ft_get_padding(int num, t_pritnt *tab, size_t strlen)
 
 size_t	ft_put_d_i(int num, t_pritnt *tab)
 {
-	size_t	i;
 	size_t	strlen;
 	size_t	tlen;
 	char	*str;
@@ -98,7 +97,6 @@ size_t	ft_put_d_i(int num, t_pritnt *tab)
 	if (str == NULL)
 		return (0);
 	strlen = ft_strlen(str);
-	i = 0;
 	ft_get_padding(num, tab, strlen);
 	tlen = 0;
 	if (tab->dash_flag == 1)

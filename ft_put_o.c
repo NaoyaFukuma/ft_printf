@@ -6,7 +6,7 @@
 /*   By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 22:51:08 by nfukuma           #+#    #+#             */
-/*   Updated: 2022/07/18 23:58:37 by nfukuma          ###   ########.fr       */
+/*   Updated: 2022/07/22 21:50:11 by nfukuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static size_t	ft_put_dash_flag_on(int num, char *str, t_pritnt *tab,
 	return (tlen);
 }
 
-static void	ft_get_padding(int num, t_pritnt *tab, size_t strlen)
+static void	ft_get_padding(t_pritnt *tab, size_t strlen)
 {
 	if (tab->zero_flag == 1 && tab->pre == -1)
 	{
@@ -89,7 +89,7 @@ size_t	ft_put_oct(unsigned int num, t_pritnt *tab)
 	if (str == NULL)
 		return (0);
 	strlen = ft_strlen(str);
-	ft_get_padding(num, tab, strlen);
+	ft_get_padding(tab, strlen);
 	tlen = 0;
 	if (tab->dash_flag == 1)
 		tlen += ft_put_dash_flag_on(num, str, tab, strlen);

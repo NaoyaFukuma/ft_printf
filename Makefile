@@ -6,7 +6,7 @@
 #    By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/13 10:20:58 by nfukuma           #+#    #+#              #
-#    Updated: 2022/07/19 00:03:11 by nfukuma          ###   ########.fr        #
+#    Updated: 2022/07/22 21:42:58 by nfukuma          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS			=	ft_printf.c ft_input_utils.c ft_put_c_s.c ft_put_d_i.c \
 OBJS			= $(SRCS:.c=.o)
 
 CC				= gcc
-CPPFLAGS		+= -I./libft/
+CPPFLAGS		+= -I./libft/ -Wall -Wextra -Werror
 RM				= rm -f
 
 NAME			= libftprintf.a

@@ -6,14 +6,14 @@
 /*   By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 23:09:38 by nfukuma           #+#    #+#             */
-/*   Updated: 2022/07/18 23:38:19 by nfukuma          ###   ########.fr       */
+/*   Updated: 2022/07/22 21:50:56 by nfukuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
 
-static size_t	ft_put_dash_flag_off(int num, char *str, t_pritnt *tab,
+static size_t	ft_put_dash_flag_off(char *str, t_pritnt *tab,
 		size_t strlen)
 {
 	size_t	i;
@@ -29,7 +29,7 @@ static size_t	ft_put_dash_flag_off(int num, char *str, t_pritnt *tab,
 	return (tlen);
 }
 
-static size_t	ft_put_dash_flag_on(int num, char *str, t_pritnt *tab,
+static size_t	ft_put_dash_flag_on(char *str, t_pritnt *tab,
 		size_t strlen)
 {
 	size_t	i;
@@ -58,9 +58,9 @@ size_t	ft_put_p(unsigned long num, t_pritnt *tab)
 	tab->space_pad = tab->wdt - strlen - 2;
 	tlen = 0;
 	if (tab->dash_flag == 1)
-		tlen += ft_put_dash_flag_on(num, str, tab, strlen);
+		tlen += ft_put_dash_flag_on(str, tab, strlen);
 	else
-		tlen += ft_put_dash_flag_off(num, str, tab, strlen);
+		tlen += ft_put_dash_flag_off(str, tab, strlen);
 	free(str);
 	return (tlen);
 }

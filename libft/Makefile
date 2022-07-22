@@ -6,7 +6,7 @@
 #    By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/08 14:26:40 by nfukuma           #+#    #+#              #
-#    Updated: 2022/07/16 23:56:29 by nfukuma          ###   ########.fr        #
+#    Updated: 2022/07/19 14:20:10 by nfukuma          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,8 @@ ifdef			WITH_BONUS
 OBJS			+=	$(BONUS_OBJS)
 endif
 
+CC				= gcc
+CPPFLAGS		+= -Wall -Wextra -Werror
 RM				=	rm -f
 
 NAME			=	libft.a

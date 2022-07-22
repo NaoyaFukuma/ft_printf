@@ -6,7 +6,7 @@
 /*   By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 16:01:01 by nfukuma           #+#    #+#             */
-/*   Updated: 2022/07/18 21:27:00 by nfukuma          ###   ########.fr       */
+/*   Updated: 2022/07/19 17:25:56 by nfukuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ size_t	ft_put_s(char *str, t_pritnt *tab)
 	if (str == NULL)
 		str = "(null)";
 	strlen = ft_strlen(str);
-	if (tab->pre != -1 && tab->pre < strlen)
+	if (tab->pre != -1 && tab->pre < (int)strlen)
 		strlen = tab->pre;
-	if (tab->wdt != -1 && tab->wdt > strlen)
-		tab->space_pad = tab->wdt - strlen;
+	if (tab->wdt != -1 && tab->wdt > (int)strlen)
+		tab->space_pad = tab->wdt - (int)strlen;
 	tlen = 0;
 	if (tab->dash_flag == 0)
 		while (tab->space_pad-- > 0)
