@@ -6,7 +6,7 @@
 /*   By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 14:16:19 by nfukuma           #+#    #+#             */
-/*   Updated: 2022/07/18 22:36:50 by nfukuma          ###   ########.fr       */
+/*   Updated: 2022/07/26 15:48:56 by nfukuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,13 @@ void	ft_parse_skip_flag(const char **fmt, t_pritnt *tab)
 	{
 		if (**fmt == '#')
 			tab->sharp_flag = 1;
-		if (**fmt == '0')
-			tab->zero_flag = 1;
-		if (**fmt == '-' && tab->zero_flag != 1)
+		if (**fmt == '-')
+		{
 			tab->dash_flag = 1;
+			tab->zero_flag = 0;
+		}
+		if (**fmt == '0' && tab->dash_flag != 1)
+			tab->zero_flag = 1;
 		if (**fmt == '+')
 			tab->plus_flag = 1;
 		if (**fmt == ' ')
